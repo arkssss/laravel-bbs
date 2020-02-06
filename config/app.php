@@ -66,8 +66,8 @@ return [
     | ahead and set this to a sensible default for you out of the box.
     |
     */
-
-    'timezone' => 'UTC',
+    // 时区设置为上海
+    'timezone' => 'Asia/Shanghai',
 
     /*
     |--------------------------------------------------------------------------
@@ -79,8 +79,8 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
-
-    'locale' => 'en',
+    // 中文设置为默认语言
+    'locale' => 'zh-CN',
 
     /*
     |--------------------------------------------------------------------------
