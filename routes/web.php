@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', "PagesController@root");
+Route::get('/', "PagesController@root")->name('home');
 
 
 # Auth::routes() 为自动生成，功能同下
