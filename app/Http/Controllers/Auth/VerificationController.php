@@ -35,8 +35,13 @@ class VerificationController extends Controller
      */
     public function __construct()
     {
+        /* auth 过滤未登陆的 HTTP 请求 */
         $this->middleware('auth');
+
+        /* 检测请求的 verify 方法是否有签名 */
         $this->middleware('signed')->only('verify');
+
+        /* 限制访问次数，1分钟6次 */
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
 }
