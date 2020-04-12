@@ -39,7 +39,7 @@ class UsersController extends Controller
 
         if($request->avatar){
 
-            $save_path = $imageUploadHandler->save($request->avatar, 'avatar', $user->id);
+            $save_path = $imageUploadHandler->save($request->avatar, 'avatar', $user->id, 416);
             if($save_path){
                 $data['avatar'] = $save_path['path'];
             }
