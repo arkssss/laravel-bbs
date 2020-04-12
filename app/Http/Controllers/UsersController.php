@@ -12,6 +12,8 @@ class UsersController extends Controller
     //
     public function __construct()
     {
+        // edit 和 update 两个操作需要登陆
+        $this->middleware('auth', ['except' => ['show']]);
     }
 
     /**
@@ -29,12 +31,19 @@ class UsersController extends Controller
      */
     public function edit(User $user){
 
+        /* 当前用户只能修改当前用户 */
+        $this->authorize('edit', $user);
+
         return view('users.edit', compact('user'));
 
     }
 
 
     public function update(UserUpdateRequest $request, ImageUploadHandler $imageUploadHandler, User $user){
+
+        /* 当前用户只能修改当前用户 */
+        $this->authorize('update', $user);
+
         $data = $request->all();
 
         if($request->avatar){
