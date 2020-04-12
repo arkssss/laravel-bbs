@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079822e3-6500-4c83-b22f-868a2a6842fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/shared/_error.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Handlers/ImageUploadHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +20,20 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -173,7 +187,8 @@
       <workItem from="1584845696629" duration="6000" />
       <workItem from="1584847019011" duration="6518000" />
       <workItem from="1584930078443" duration="6216000" />
-      <workItem from="1586511415667" duration="5555000" />
+      <workItem from="1586511415667" duration="9563000" />
+      <workItem from="1586612966010" duration="3779000" />
     </task>
     <servers />
   </component>
@@ -181,6 +196,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="602" y="179" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586532835218">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="602" y="179" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050/1680.166.1024.768@0.0.1680.1050" timestamp="1586532835218" />
     <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584930605298">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -189,15 +208,21 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="601" y="416" width="478" height="245" key="ComposerInitDialogKey/0.0.1680.1050@0.0.1680.1050" timestamp="1581136978764" />
-    <state x="519" y="372" key="com.intellij.ide.util.TipDialog" timestamp="1586511416207">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="661" y="455" key="NewPhpFileDialog" timestamp="1586532769585">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state x="661" y="455" key="NewPhpFileDialog/0.0.1680.1050/1680.166.1024.768@0.0.1680.1050" timestamp="1586532769585" />
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1586612971403">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/1680.166.1024.768@0.0.1680.1050" timestamp="1586612971403" />
     <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1584930078675" />
     <state x="519" y="372" key="com.intellij.ide.util.TipDialog/0.23.1680.1027/1680.189.1024.745@0.23.1680.1027" timestamp="1586511416207" />
     <state x="791" y="92" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581389229090" />
-    <state x="506" y="105" width="1030" height="663" key="find.popup" timestamp="1581140244166">
+    <state x="506" y="105" width="1030" height="663" key="find.popup" timestamp="1586521370687">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state x="506" y="105" width="1030" height="663" key="find.popup/0.0.1680.1050/1680.166.1024.768@0.0.1680.1050" timestamp="1586521370687" />
     <state x="506" y="105" width="1030" height="663" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581140244166" />
   </component>
 </project>
