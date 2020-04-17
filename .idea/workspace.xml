@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="079822e3-6500-4c83-b22f-868a2a6842fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +138,7 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/summerblue/generator" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XPtCxDun4DZSeiS9fiUePMmoHS" />
@@ -190,7 +193,8 @@
       <workItem from="1584930078443" duration="6216000" />
       <workItem from="1586511415667" duration="9563000" />
       <workItem from="1586612966010" duration="4977000" />
-      <workItem from="1586690552109" duration="10007000" />
+      <workItem from="1586690552109" duration="10538000" />
+      <workItem from="1587099912542" duration="710000" />
     </task>
     <servers />
   </component>
@@ -214,10 +218,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="661" y="455" key="NewPhpFileDialog/0.0.1680.1050/1680.166.1024.768@0.0.1680.1050" timestamp="1586532769585" />
-    <state x="519" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1586690552600">
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1587099913595">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/1680.166.1024.768@0.0.1680.1050" timestamp="1586690552600" />
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/1680.166.1024.768@0.0.1680.1050" timestamp="1587099913595" />
     <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1584930078675" />
     <state x="519" y="372" key="com.intellij.ide.util.TipDialog/0.23.1680.1027/1680.189.1024.745@0.23.1680.1027" timestamp="1586511416207" />
     <state x="791" y="92" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581389229090" />
