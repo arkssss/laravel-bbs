@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079822e3-6500-4c83-b22f-868a2a6842fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Service/PostService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PostCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PostCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Service/PostService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/PostService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/root.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/root.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/HomePost.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/HomePost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +220,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="601" y="416" width="478" height="245" key="ComposerInitDialogKey/0.0.1680.1050@0.0.1680.1050" timestamp="1581136978764" />
+    <state x="425" y="310" key="EditFileWatcherDialog" timestamp="1587219343993">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="425" y="310" key="EditFileWatcherDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587219343993" />
     <state x="661" y="455" key="NewPhpFileDialog" timestamp="1587197356667">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

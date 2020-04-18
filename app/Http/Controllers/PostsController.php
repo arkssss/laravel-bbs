@@ -19,7 +19,7 @@ class PostsController extends Controller
     /* 返回所有的 posts */
     public function index(){
 
-        return json_encode($this->postService->getPosts());
+        return json_encode($this->postService->getHomePosts());
 
     }
 }
