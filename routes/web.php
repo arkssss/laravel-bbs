@@ -40,3 +40,7 @@ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verific
 
 // 用户相关操作
 Route::resource('users', 'UsersController', ['only' => ['show', 'edit', 'update']]);
+
+
+// 推文相关操作
+Route::resource('posts', 'PostsController');

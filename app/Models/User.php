@@ -22,7 +22,7 @@ class User extends Authenticatable implements MustVerifyEmailContracts
 
     /**
      * The attributes that should be hidden for arrays.
-     *
+     *  $user->toArray 的时候，hidden 字段不会被转化
      * @var array
      */
     protected $hidden = [

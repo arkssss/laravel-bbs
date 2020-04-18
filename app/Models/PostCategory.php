@@ -13,4 +13,6 @@ class PostCategory extends Model
     protected $fillable = [
         'description', 'post_count'
     ];
+
+    protected $table = 'postCategories';
 }
