@@ -25,32 +25,33 @@ class PostService {
     /* 获得所有 Post */
     public function getHomePosts(){
 
-        $posts = $this->postModel::with('category', 'user')->paginate(10)->toArray();
+        /* get posts */
+        $posts = $this->postModel::with('category', 'user')->paginate(30)->toArray();
 
-        /* value pass for the ajax */
+        /* value passed for the ajax */
         $passKey = [
             'created_at', 'reply_count', 'title',
             'view_count', 'updated_at'
         ];
         $categoryKey = [
-            'name',
-            'description',
+            'name' => 'cat_name',
+            'description' => 'cat_des',
         ];
         $userKey = [
-            'avatar',
-            'name'
+            'avatar' => 'user_avatar',
+            'name' => 'user_name',
         ];
 
-        /* remove useless item */
-        foreach ($posts as &$post){
+        /* remove useless item for faster ajax */
+        foreach ($posts['data'] as &$post){
             foreach ($post as $item_key => $item_content){
                 if ($item_key == 'category'){
-                    foreach ($categoryKey as $value){
-                        $post[$value] = $post['category'][$value];
+                    foreach ($categoryKey as $key => $value){
+                        $post[$value] = $post['category'][$key];
                     }
                 }else if ($item_key == 'user'){
-                    foreach ($userKey as $value){
-                        $post[$value] = $post['user'][$value];
+                    foreach ($userKey as $key => $value){
+                        $post[$value] = $post['user'][$key];
                     }
                 }else if (in_array($item_key, $passKey)){
                     continue;
@@ -59,7 +60,7 @@ class PostService {
             }
         }
 
-        /* transform category_id to */
+        /* return */
         return $posts;
     }
 

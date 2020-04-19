@@ -7,6 +7,7 @@ use App\Service\PostService;
 
 class PostsController extends Controller
 {
+
     /* Post service */
     private $postService;
 
@@ -22,4 +23,5 @@ class PostsController extends Controller
         return json_encode($this->postService->getHomePosts());
 
     }
+
 }
