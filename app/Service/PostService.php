@@ -11,14 +11,11 @@ class PostService {
     /* 对应的 Model */
     private $postModel;
 
-    private $postCategory;
-
 
     /* DI */
-    public function  __construct(Post $post, PostCategory $postCategory)
+    public function  __construct(Post $post)
     {
         $this->postModel = $post;
-        $this->postCategory = $postCategory;
     }
 
 
