@@ -2,13 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079822e3-6500-4c83-b22f-868a2a6842fc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/larabbs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/larabbs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Header/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Header/style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Post/HomePost/store/actionCreator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Post/HomePost/store/actionType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Post/HomePost/store/homepostReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Post/HomePost/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Service/PostService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/PostService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Example.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/HomePost.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Post/HomePost/HomePost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Post/Post.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,9 +185,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js" />
+      <recent name="$PROJECT_DIR$/resources/js/components/Post/HomePost" />
+      <recent name="$PROJECT_DIR$/resources/js/components/Post" />
       <recent name="$PROJECT_DIR$/app/Models" />
     </key>
   </component>
@@ -200,6 +221,8 @@
       <workItem from="1586612966010" duration="4977000" />
       <workItem from="1586690552109" duration="10538000" />
       <workItem from="1587099912542" duration="710000" />
+      <workItem from="1587523646716" duration="16252000" />
+      <workItem from="1587566097081" duration="2438000" />
     </task>
     <servers />
   </component>
@@ -207,10 +230,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="562" y="335" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587531924865">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="562" y="335" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1587531924865" />
+    <state x="646" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1587566136409">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="646" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050/1680.-154.1024.768@0.0.1680.1050" timestamp="1587566136409" />
     <state x="602" y="179" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586532835218">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="602" y="179" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050/1680.166.1024.768@0.0.1680.1050" timestamp="1586532835218" />
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587537871959">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587537871959" />
     <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587228526852">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -228,11 +263,12 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="661" y="455" key="NewPhpFileDialog/0.0.1680.1050/1680.166.1024.768@0.0.1680.1050" timestamp="1587197356667" />
-    <state x="519" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1587099913595">
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1587566097623">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/1680.-154.1024.768@0.0.1680.1050" timestamp="1587566097623" />
     <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/1680.166.1024.768@0.0.1680.1050" timestamp="1587099913595" />
-    <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1584930078675" />
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587523646605" />
     <state x="519" y="372" key="com.intellij.ide.util.TipDialog/0.23.1680.1027/1680.189.1024.745@0.23.1680.1027" timestamp="1586511416207" />
     <state x="791" y="92" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581389229090" />
     <state x="506" y="105" width="1030" height="663" key="find.popup" timestamp="1586521370687">

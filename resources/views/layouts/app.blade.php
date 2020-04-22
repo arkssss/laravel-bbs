@@ -19,8 +19,8 @@
 <body>
 <div id="app" class="{{ route_class() }}-page">
 
-  @include('layouts._header')
-{{--  <div id="header"></div>--}}
+{{--  @include('layouts._header')--}}
+  <div id="Header"></div>
 
   <div class="container">
 

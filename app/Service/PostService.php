@@ -2,28 +2,29 @@
 namespace App\Service;
 use App\Models\Post;
 use App\Models\PostCategory;
+use App\Repository\IPostRepository;
 
 
 /* 关于Post的业务层 */
 class PostService {
 
 
-    /* 对应的 Model */
-    private $postModel;
-
+    /* post 数据仓库 */
+    private $postRepository;
 
     /* DI */
-    public function  __construct(Post $post)
+    public function  __construct(IPostRepository $postRepository)
     {
-        $this->postModel = $post;
+        $this->postRepository = $postRepository;
     }
 
 
     /* 获得所有 Post */
-    public function getHomePosts(){
+    public function getPaginate(){
+        $pageNumber = 10;
 
         /* get posts */
-        $posts = $this->postModel::with('category', 'user')->paginate(30)->toArray();
+        $posts = $this->postRepository->getAllPosts($pageNumber)->toArray();
 
         /* value passed for the ajax */
         $passKey = [
@@ -61,6 +62,22 @@ class PostService {
         return $posts;
     }
 
+
+    /**
+     * 根据类别获取相应的 posts
+     * @param $category_id
+     * @param int $pageNumber
+     * @return
+     */
+    public function getPostsByCategory($category_id){
+
+        $pageNumber = 10;
+
+        $posts = $this->postRepository->getPostsByCategory($category_id, $pageNumber);
+        $posts = $posts->toArray();
+
+        return $posts;
+    }
 }
 
 

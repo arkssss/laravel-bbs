@@ -1,3 +1,9 @@
+import ReactDOM from "react-dom";
+import {Provider} from 'react-redux'
+import store from './store/index'
+import React from "react";
+import HomePost from "./components/Post/HomePost/HomePost";
+import Header from "./components/Header/Header";
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -12,6 +18,23 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./components/Example');
-require('./components/Header');
-require('./components/HomePost');
+// require('./components/Header');
+
+if (document.getElementById('Header')) {
+  ReactDOM.render(
+    <Provider store={store}>
+      <Header />
+    </Provider>
+    ,
+    document.getElementById('Header'));
+}
+
+
+if (document.getElementById('HomePosts')) {
+  ReactDOM.render(
+    <Provider store={store}>
+      <HomePost />
+    </Provider>
+    ,
+    document.getElementById('HomePosts'));
+}
