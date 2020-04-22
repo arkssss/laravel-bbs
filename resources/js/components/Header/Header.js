@@ -1,31 +1,37 @@
 import React, {Component} from "react";
 import { Menu } from 'antd';
+import {connect} from 'react-redux'
 import {
   MyHeader,
   Logo,
   MyNav,
   Operation,
 } from "./style";
-
+import {actionCreator} from './store';
 const { SubMenu } = Menu;
 
 class Header extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 'topic',
-    };
+  // handleClick(e) {
+  //   console.log('click ', e);
+  //   this.setState({
+  //     current: e.key,
+  //   });
+  // };
 
-    this.handleClick = this.handleClick.bind(this)
+  getMenuItem(){
+    // console.log(this.props.list);
+    // console.log(typeof(this.props.list));
+    return(
+      this.props.list.map(function (item) {
+        return (
+          <Menu.Item key={item.id}>
+            {item.name}
+          </Menu.Item>
+          )
+      })
+    )
   }
-
-  handleClick(e) {
-    console.log('click ', e);
-    this.setState({
-      current: e.key,
-    });
-  };
 
   render() {
     return (
@@ -34,22 +40,23 @@ class Header extends Component {
           Ark 论坛
         </Logo>
         <MyNav>
-          <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
+          <Menu onClick={this.props.handleHeaderItemClick} selectedKeys={[this.props.current]} mode="horizontal">
           <Menu.Item key="topic">
             话题
           </Menu.Item>
-          <Menu.Item key="share">
-            分享
-          </Menu.Item>
-          <Menu.Item key="class">
-            教程
-          </Menu.Item>
-          <Menu.Item key="announcement">
-            公告
-          </Menu.Item>
-          <Menu.Item key="qa">
-            问答
-          </Menu.Item>
+          {this.getMenuItem()}
+          {/*<Menu.Item key="share">*/}
+          {/*  分享*/}
+          {/*</Menu.Item>*/}
+          {/*<Menu.Item key="class">*/}
+          {/*  教程*/}
+          {/*</Menu.Item>*/}
+          {/*<Menu.Item key="announcement">*/}
+          {/*  公告*/}
+          {/*</Menu.Item>*/}
+          {/*<Menu.Item key="qa">*/}
+          {/*  问答*/}
+          {/*</Menu.Item>*/}
           {/*<Menu.Item key="app" disabled>*/}
           {/*  <AppstoreOutlined />*/}
           {/*  Navigation Two*/}
@@ -82,6 +89,33 @@ class Header extends Component {
     );
   }
 
+
+  componentDidMount() {
+    this.props.getInitPostCategory();
+  }
+
 }
 
-export default Header
+const mapStateToProps = (state)=>{
+
+  return {
+    'current' : state.header.current,
+    'list' : state.header.list,
+  }
+
+};
+
+const mapDispatchToProps = (dispatch)=>{
+
+  return {
+    handleHeaderItemClick(e){
+      console.log('click ', e);
+    },
+    getInitPostCategory(){
+      const action = actionCreator.getInitPostCategory();
+      dispatch(action);
+    }
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
