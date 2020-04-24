@@ -19,12 +19,13 @@ class PostService {
     }
 
 
-    /* 获得所有 Post */
-    public function getPaginate(){
-        $pageNumber = 10;
-
-        /* get posts */
-        $posts = $this->postRepository->getAllPosts($pageNumber)->toArray();
+    /**
+     * 格式化 posts
+     * 删除无用信息，增加传递效率
+     * @param $posts : array
+     * @return mixed $posts : array
+     */
+    private function formatPosts($posts){
 
         /* value passed for the ajax */
         $passKey = [
@@ -57,9 +58,19 @@ class PostService {
                 unset($post[$item_key]);
             }
         }
+        return $posts;
+    }
+
+
+    /* 获得所有 Post */
+    public function getPaginate(){
+        $pageNumber = 10;
+
+        /* get posts */
+        $posts = $this->postRepository->getAllPosts($pageNumber)->toArray();
 
         /* return */
-        return $posts;
+        return $this->formatPosts($posts);
     }
 
 
@@ -76,7 +87,7 @@ class PostService {
         $posts = $this->postRepository->getPostsByCategory($category_id, $pageNumber);
         $posts = $posts->toArray();
 
-        return $posts;
+        return $this->formatPosts($posts);
     }
 }
 

@@ -1,9 +1,10 @@
 import ReactDOM from "react-dom";
-import {Provider} from 'react-redux'
-import store from './store/index'
+import {Provider} from 'react-redux';
+import store from './store/index';
+import { Route, BrowserRouter } from 'react-router-dom';
 import React from "react";
-import HomePost from "./components/Post/HomePost/HomePost";
-import Header from "./components/Header/Header";
+import HomePages from "./pages/home";
+import Header from "./common/header";
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -17,24 +18,16 @@ require('./bootstrap');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-// require('./components/Header');
-
-if (document.getElementById('Header')) {
+if (document.getElementById('app')) {
   ReactDOM.render(
     <Provider store={store}>
       <Header />
+      <BrowserRouter>
+        <div>
+          <Route path = '/' exact component = {HomePages}></Route>
+        </div>
+      </BrowserRouter>
     </Provider>
     ,
-    document.getElementById('Header'));
-}
-
-
-if (document.getElementById('HomePosts')) {
-  ReactDOM.render(
-    <Provider store={store}>
-      <HomePost />
-    </Provider>
-    ,
-    document.getElementById('HomePosts'));
+    document.getElementById('app'));
 }

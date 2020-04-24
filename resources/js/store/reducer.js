@@ -1,7 +1,7 @@
 /* /store/reducer.js */
-import {combineReducers} from 'redux'
-import {homepostReducer} from '../components/Post/HomePost/store'
-import {headerReducer} from '../components/Header/store'
+import {combineReducers} from 'redux-immutable'
+import {homepostReducer} from '../pages/home/store'
+import {headerReducer} from '../common/header/store'
 
 /* 合并各个 reducer */
 export default combineReducers({
