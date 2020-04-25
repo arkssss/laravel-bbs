@@ -8,7 +8,9 @@ import {fromJS} from "immutable";
 
 /* immutable */
 const defaultState = fromJS({
-  "buttonStatus" : 'last_replay',
+  "buttonStatus" : 'updated_at',
+
+  "current_category" : "",
 
   "list" : [
       {
@@ -36,10 +38,10 @@ const homepostReducer = (state = defaultState, action) => {
     return state.set('listCategory', action.value);
   }
   if(action.type === GET_HOME_POST_BY_CATEGORY){
-    return state.set('list', action.list);
+    return state.set('list', action.list).set('current_category', action.current_category);
   }
   if(action.type === HOME_POST_BUTTON_STATUS_CHANGE){
-    return state.set('buttonStatus', action.buttonStatus);
+     return state.set('list', action.list).set('buttonStatus',action.buttonStatus);
   }
   return state;
 };

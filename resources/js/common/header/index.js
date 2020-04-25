@@ -8,6 +8,8 @@ import {
   Operation,
 } from "./style";
 import {actionCreator} from './store';
+import axios from "axios";
+import {INIT_HEADER_POST_CATEGORY_ACTION} from "./store/actionType";
 
 class Index extends Component {
 

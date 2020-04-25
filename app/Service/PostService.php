@@ -1,8 +1,8 @@
 <?php
 namespace App\Service;
-use App\Models\Post;
-use App\Models\PostCategory;
 use App\Repository\IPostRepository;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Log;
 
 
 /* 关于Post的业务层 */
@@ -64,13 +64,20 @@ class PostService {
 
     /* 获得所有 Post */
     public function getPaginate(){
-        $pageNumber = 10;
 
-        /* get posts */
-        $posts = $this->postRepository->getAllPosts($pageNumber)->toArray();
+        $pageNumber = 30;
+
+        try {
+            /* get posts */
+            $posts = $this->postRepository->getAllPosts($pageNumber);
+            $posts = $this->formatPosts($posts);
+        }catch (QueryException $e){
+            $posts = [];
+            Log::debug($e->getMessage());
+        }
 
         /* return */
-        return $this->formatPosts($posts);
+        return $posts;
     }
 
 
@@ -84,10 +91,54 @@ class PostService {
 
         $pageNumber = 10;
 
-        $posts = $this->postRepository->getPostsByCategory($category_id, $pageNumber);
-        $posts = $posts->toArray();
+        try {
+            $posts = $this->postRepository->getPostsByCategory($category_id, $pageNumber);
+            $posts = $this->formatPosts($posts);
+        }catch (QueryException $e){
+            $posts = [];
+            Log::debug($e->getMessage());
+        }
 
-        return $this->formatPosts($posts);
+        return $posts;
+    }
+
+
+    /**
+     * @param $order : 排序类型
+     * @return mixed|string
+     */
+    public function getAllPostsByOrder($order)
+    {
+
+        $order_method = 'desc';
+
+        try {
+            $posts = $this->postRepository->getAllPostsWithOrder($order, $order_method);
+            $posts = $this->formatPosts($posts);
+        } catch (QueryException $e) {
+            $posts = [];
+            Log::debug($e->getMessage());
+        }
+
+        return $posts;
+    }
+
+    /**
+     * @param $order
+     * @param $category_id
+     * @return array|mixed
+     */
+    public function getPostsByCategoryWithOrder($order, $category_id){
+
+        $order_method = 'desc';
+        try {
+            $posts = $this->postRepository->getPostsByCategoryWithOrder($order, $category_id, $order_method);
+            $posts = $this->formatPosts($posts);
+        }catch (QueryException $e){
+            $posts = [];
+            Log::debug($e->getMessage());
+        }
+        return $posts;
     }
 }
 

@@ -34,7 +34,7 @@ class PostList extends Component{
 
   render() {
 
-    const { listCategory, buttonStatus, handleOrderButtonClick }  = this.props;
+    const { listCategory, buttonStatus, handleOrderButtonClick, current_category }  = this.props;
     /* Icon */
     const IconText = ({ icon, text }) => (
       <span>
@@ -50,15 +50,15 @@ class PostList extends Component{
         <ListOrder>
           <Button
             className='buttonOrder'
-            type= {buttonStatus === 'last_replay'? 'primary' : ''}
-            onClick={()=>handleOrderButtonClick('last_replay')}
+            type= {buttonStatus === 'updated_at'? 'primary' : ''}
+            onClick={()=>handleOrderButtonClick('updated_at', current_category)}
           >
             最后回复
           </Button>
           <Button
             className='buttonOrder'
-            type= {buttonStatus === 'latest_post'? 'primary' : ''}
-            onClick={()=>handleOrderButtonClick('latest_post')}
+            type= {buttonStatus === 'created_at'? 'primary' : ''}
+            onClick={()=>handleOrderButtonClick('created_at', current_category)}
           >
             最新发布
           </Button>
@@ -113,6 +113,7 @@ const mapStateToProps = (state)=>{
     'list' : state.get('homepost').get('list'),
     'listCategory' : state.get('homepost').get('listCategory'),
     'buttonStatus' : state.get('homepost').get('buttonStatus'),
+    'current_category' : state.get('homepost').get('current_category'),
   }
 };
 
@@ -128,8 +129,8 @@ const mapDispatchToProps = (dispatch)=>{
     handlerPostCategoryClick(category_id){
       dispatch(actionCreator.getPostsByCategory(category_id));
     },
-    handleOrderButtonClick(button_key){
-      dispatch(actionCreator.buttonStatusChange(button_key));
+    handleOrderButtonClick(button_key, current_category){
+      dispatch(actionCreator.buttonStatusChange(button_key, current_category));
     }
   }
 };

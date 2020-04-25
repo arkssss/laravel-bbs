@@ -45,6 +45,8 @@ Route::resource('users', 'UsersController', ['only' => ['show', 'edit', 'update'
 // 推文相关操作
 Route::resource('posts', 'PostsController');
 Route::get('posts/category/{category_id}', 'PostsController@getPostsByCategory');
+Route::get('posts/order/{order}', 'PostsController@getAllPostsByOrder');
+Route::get('posts/order/{order}/category/{category_id}', 'PostsController@getPostsByCategoryWithOrder');
 
 
 // 推文类型

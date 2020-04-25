@@ -24,8 +24,12 @@ class PostsController extends Controller
 
     /* 返回所有的 posts */
     public function index(){
+        $posts = $this->postService->getPaginate();
 
-        return json_encode($this->postService->getPaginate(30));
+        return json_encode([
+            'status' => config('constant.STATES_SUCCESS'),
+            'data'   => $posts
+        ]);
 
     }
 
@@ -37,8 +41,12 @@ class PostsController extends Controller
     public function getPostsByCategory(Request $request){
 
         $category_id = $request->category_id;
+        $posts = $this->postService->getPostsByCategory($category_id);
 
-        return json_encode($this->postService->getPostsByCategory($category_id));
+        return json_encode([
+            'status' => config('constant.STATES_SUCCESS'),
+            'data' => $posts
+        ]);
 
     }
 
@@ -46,7 +54,44 @@ class PostsController extends Controller
      * @return false|string
      */
     public function getAllPostsCategory(){
-        return json_encode($this->postCategoryService->getAllPostCategory());
+
+        $posts = $this->postCategoryService->getAllPostCategory();
+
+        return json_encode(
+            [
+                'status' => config('constant.STATUS_SUCCESS'),
+                'data' => $posts,
+            ]);
+    }
+
+    /**
+     * @return false|string
+     */
+    public function getAllPostsByOrder(Request $request){
+
+        $order_field = $request->order;
+
+        $posts = $this->postService->getAllPostsByOrder($order_field);
+        return json_encode(
+            [
+                'statue' => config('constant.STATUS_SUCCESS'),
+                'data' => $posts,
+            ]);
+    }
+
+
+    public function getPostsByCategoryWithOrder(Request $request){
+        $order_field = $request->order;
+        $category_id = $request->category_id;
+
+        $posts = $this->postService->getPostsByCategoryWithOrder($order_field, $category_id);
+
+        return json_encode(
+            [
+                'statue' => config('constant.STATUS_SUCCESS'),
+                'data' => $posts,
+            ]
+        );
     }
 
 }

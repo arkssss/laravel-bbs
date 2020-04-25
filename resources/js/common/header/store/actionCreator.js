@@ -12,7 +12,7 @@ export const getInitPostCategory = ()=>{
       console.log(res.data);
       const action = {
         'type' : INIT_HEADER_POST_CATEGORY_ACTION,
-        'list': res.data
+        'list': res.data.data
       };
       dispatch(action)
     }).catch(() =>{

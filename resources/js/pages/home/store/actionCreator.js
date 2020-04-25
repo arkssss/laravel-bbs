@@ -12,7 +12,7 @@ export const getInitHomepostListCreator = ()=>{
       axios.get('/posts').then((res)=>{
           const action = {
             'type' : INIT_HOME_POST_LIST_ACTION,
-            'value': fromJS(res.data.data),
+            'value': fromJS(res.data.data.data),
           };
           dispatch(action)
       }).catch(() =>{
@@ -26,7 +26,7 @@ export const getInitPostCategory = ()=>{
     axios.get('/posts/postCategory/all').then((res)=>{
       const action = {
         'type' : INIT_HOME_POST_CATEGORY_ACTION,
-        'value': fromJS(res.data),
+        'value': fromJS(res.data.data),
       };
       dispatch(action);
     }).catch(()=>{
@@ -40,7 +40,8 @@ export const getPostsByCategory = (category_id) => {
     axios.get('/posts/category/' + category_id).then((res)=>{
       const action = {
         'type' : GET_HOME_POST_BY_CATEGORY,
-        'list': fromJS(res.data.data),
+        'list': fromJS(res.data.data.data),
+        'current_category' : category_id,
       };
       dispatch(action);
     }).catch(()=>{
@@ -49,12 +50,23 @@ export const getPostsByCategory = (category_id) => {
   }
 };
 
-export const buttonStatusChange = (button_key) =>{
+/* button_key => order */
+export const buttonStatusChange = (button_key, current_category) =>{
   return (dispatch) => {
-    const action = {
-      'type' : HOME_POST_BUTTON_STATUS_CHANGE,
-      'buttonStatus' : button_key
-    };
-    dispatch(action)
+
+    const url = current_category
+                ? '/posts/order/' + button_key + '/category/' + current_category
+                : '/posts/order/' + button_key;
+
+    axios.get(url).then((res)=>{
+      const action = {
+        'type' : HOME_POST_BUTTON_STATUS_CHANGE,
+        'buttonStatus' : button_key,
+        'list' : fromJS(res.data.data.data),
+      };
+      dispatch(action)
+    }).catch(()=>{
+      console.log('error');
+    });
   }
 };
