@@ -3,6 +3,7 @@
 
 namespace App\Repository;
 
+use App\Models\Post;
 use Illuminate\Database\QueryException;
 
 interface IPostRepository{
@@ -41,4 +42,13 @@ interface IPostRepository{
      * @throws QueryException
      */
     public function getPostsByCategoryWithOrder($order_field, $category_id,  $order_method = 'ASC', $limit = 10);
+
+
+
+    /**
+     * store a post into db
+     * @param Post $post
+     * @return mixed
+     */
+    public function storePost(Post $post);
 }

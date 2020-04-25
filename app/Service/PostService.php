@@ -1,5 +1,6 @@
 <?php
 namespace App\Service;
+use App\Models\Post;
 use App\Repository\IPostRepository;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Log;
@@ -117,7 +118,7 @@ class PostService {
             $posts = $this->formatPosts($posts);
         } catch (QueryException $e) {
             $posts = [];
-            Log::debug($e->getMessage());
+            Log::error($e->getMessage());
         }
 
         return $posts;
@@ -136,9 +137,22 @@ class PostService {
             $posts = $this->formatPosts($posts);
         }catch (QueryException $e){
             $posts = [];
-            Log::debug($e->getMessage());
+            Log::error($e->getMessage());
         }
         return $posts;
+    }
+
+
+    public function storePost(Post $post){
+
+        try {
+            $success = $this->postRepository->storePost($post);
+        }catch (QueryException $e){
+            $success = false;
+            Log::error($e->getMessage());
+        }
+
+        return $success;
     }
 }
 

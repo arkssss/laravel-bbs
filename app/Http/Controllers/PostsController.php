@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostStoreRequest;
+use App\Models\Post;
 use App\Service\PostCategoryService;
 use Illuminate\Http\Request;
 use App\Service\PostService;
+use Illuminate\Support\Facades\Log;
 
 class PostsController extends Controller
 {
@@ -35,6 +38,7 @@ class PostsController extends Controller
 
 
     /**
+     * 按类别获得文章
      * @param Request $request
      * @return false|string
      */
@@ -50,7 +54,9 @@ class PostsController extends Controller
 
     }
 
+
     /**
+     * 获得所有文章
      * @return false|string
      */
     public function getAllPostsCategory(){
@@ -64,7 +70,10 @@ class PostsController extends Controller
             ]);
     }
 
+
     /**
+     * 有顺序的展示所有文章
+     * @param Request $request
      * @return false|string
      */
     public function getAllPostsByOrder(Request $request){
@@ -80,6 +89,11 @@ class PostsController extends Controller
     }
 
 
+    /**
+     * 通过类名有顺序的显示文章
+     * @param Request $request
+     * @return false|string
+     */
     public function getPostsByCategoryWithOrder(Request $request){
         $order_field = $request->order;
         $category_id = $request->category_id;
@@ -94,4 +108,23 @@ class PostsController extends Controller
         );
     }
 
+
+    /**
+     * 创建一个新的文章
+     * @param PostStoreRequest $postStoreRequest
+     * @return false|string
+     */
+    public function store(PostStoreRequest $postStoreRequest, Post $post){
+
+        $post->fill($postStoreRequest->all());
+        $post['u_id'] = 1;
+
+        /* save success or not */
+        $success = $this->postService->storePost($post);
+
+        return json_encode([
+            'status'=>$success,
+        ]);
+
+    }
 }

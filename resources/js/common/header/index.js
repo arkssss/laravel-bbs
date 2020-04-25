@@ -8,8 +8,8 @@ import {
   Operation,
 } from "./style";
 import {actionCreator} from './store';
-import axios from "axios";
-import {INIT_HEADER_POST_CATEGORY_ACTION} from "./store/actionType";
+import {Link} from "react-router-dom";
+
 
 class Index extends Component {
 
@@ -39,6 +39,10 @@ class Index extends Component {
           {this.getMenuItem()}
         </Menu>
         </MyNav>
+        <Operation>
+          <Link to='/login'>登陆 |</Link>
+          <Link to='/register'> 注册</Link>
+        </Operation>
       </HeaderWrapper>
     );
   }
@@ -50,9 +54,7 @@ class Index extends Component {
 }
 
 const mapStateToProps = (state)=>{
-  console.log('--header--');
-  console.log(state.get('header').get('list'));
-  console.log('--header--');
+
   return {
     'current' : state.get('header').get('current'),
     'list' : state.get('header').get('list'),

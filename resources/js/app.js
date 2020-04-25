@@ -5,6 +5,8 @@ import { Route, BrowserRouter } from 'react-router-dom';
 import React from "react";
 import HomePages from "./pages/home";
 import Header from "./common/header";
+import Login from "./pages/login";
+import Register from "./pages/register";
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -21,10 +23,12 @@ require('./bootstrap');
 if (document.getElementById('app')) {
   ReactDOM.render(
     <Provider store={store}>
-      <Header />
       <BrowserRouter>
+        <Header />
         <div>
           <Route path = '/' exact component = {HomePages}></Route>
+          <Route path = '/login' exact component = {Login}></Route>
+          <Route path = '/register' exact component = {Register}></Route>
         </div>
       </BrowserRouter>
     </Provider>

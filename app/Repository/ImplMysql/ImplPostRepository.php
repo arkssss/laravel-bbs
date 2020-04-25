@@ -83,4 +83,15 @@ class ImplPostRepository implements IPostRepository{
             ->toArray();
     }
 
+
+    /**
+     * @param Post $post
+     * @return mixed|void
+     */
+    public function storePost(Post $post)
+    {
+
+        return $post->save();
+
+    }
 }

@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //
+
+    // 可更改数据
+    protected $fillable = [
+        'title', 'body', 'category_id', 'excerpt', 'slug'
+    ];
 
 
     /* 关联 post 表 */
