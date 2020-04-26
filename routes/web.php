@@ -51,3 +51,7 @@ Route::get('posts/order/{order}/category/{category_id}', 'PostsController@getPos
 
 // 推文类型
 Route::get('posts/postCategory/all', 'PostsController@getAllPostsCategory');
+
+
+// 权限
+Route::get('auth', 'AuthController@index');

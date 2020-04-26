@@ -5,11 +5,11 @@ import {
   HeaderWrapper,
   Logo,
   MyNav,
-  Operation,
+
 } from "./style";
 import {actionCreator} from './store';
-import {Link} from "react-router-dom";
-
+import Person from "./component/person";
+import axios from "axios";
 
 class Index extends Component {
 
@@ -26,29 +26,35 @@ class Index extends Component {
   }
 
   render() {
+    const {handleHeaderItemClick, current } = this.props;
     return (
       <HeaderWrapper>
         <Logo href='/'>
           Ark 论坛
         </Logo>
         <MyNav>
-          <Menu onClick={this.props.handleHeaderItemClick} selectedKeys={[this.props.current]} mode="horizontal">
+          <Menu onClick={handleHeaderItemClick} selectedKeys={[current]} mode="horizontal">
           <Menu.Item key="topic">
             话题
           </Menu.Item>
           {this.getMenuItem()}
         </Menu>
         </MyNav>
-        <Operation>
-          <Link to='/login'>登陆 |</Link>
-          <Link to='/register'> 注册</Link>
-        </Operation>
+        <Person/>
       </HeaderWrapper>
     );
   }
 
   componentDidMount() {
     this.props.getInitPostCategory();
+
+    axios.get('/auth').then((res)=>{
+
+      console.log(res)
+
+    }).catch(()=>{
+
+    })
   }
 
 }

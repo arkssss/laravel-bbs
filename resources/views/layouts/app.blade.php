@@ -23,7 +23,6 @@
 {{--  </div>--}}
 {{--  @include('layouts._footer')--}}
 </div>
-
 <!-- Scripts -->
 {{-- For react recomponent mount --}}
 <script src="{{ mix('js/app.js') }}"></script>

@@ -16,17 +16,16 @@ class Register extends Component{
 
   componentDidMount() {
 
-      axios.post('/posts',{
-          'title' : 'hello fz',
-          'body'  : 'hello fz day, this is a happy day in jzc',
-          'category_id' : 2
-      }).then((res)=>{
-        console.log(res.status);
-        console.log(res.data)
-      }).catch((e)=>{
-        console.log(e)
-      })
-
+      // axios.post('/posts',{
+      //     'title' : 'hello fz',
+      //     'body'  : 'hello fz day, this is a happy day in jzc',
+      //     'category_id' : 2
+      // }).then((res)=>{
+      //   console.log(res.status);
+      //   console.log(res.data)
+      // }).catch((e)=>{
+      //   console.log(e)
+      // })
   }
 
 }
