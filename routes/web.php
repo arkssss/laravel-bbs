@@ -54,4 +54,6 @@ Route::get('posts/postCategory/all', 'PostsController@getAllPostsCategory');
 
 
 // 权限
+
 Route::get('auth', 'AuthController@index');
+Route::post('auth', 'AuthController@index');

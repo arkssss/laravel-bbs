@@ -10,19 +10,17 @@ import {actionCreator} from "../store";
 
 class Person extends Component{
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-    };
-  }
 
-  LoggedOperation(person_dropdown_visible){
+  LoggedOperation(person_dropdown_visible, person_information){
     /* 登陆的操作栏 */
     const menu = (
       <Menu onClick={this.props.handleMenuClick.bind(this)}>
-        <Menu.Item key="1">我发布的</Menu.Item>
-        <Menu.Item key="2">个人中心</Menu.Item>
+        {/*<Link to={''}>*/}
+        <Menu.Item>我发布的</Menu.Item>
+        {/*</Link>*/}
+        <Link to={'/userHome'}>
+          <Menu.Item key="2">个人中心</Menu.Item>
+        </Link>
         <Menu.Item key="3">退出</Menu.Item>
       </Menu>
     );
@@ -33,7 +31,7 @@ class Person extends Component{
         visible={person_dropdown_visible}
       >
         <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-          Hover me <DownOutlined />
+          {person_information.name} <DownOutlined />
         </a>
       </Dropdown>
     )
@@ -53,15 +51,34 @@ class Person extends Component{
     )
   }
 
+  getOperationElement(person_logged, person_dropdown_visible, person_information){
+    switch (person_logged) {
+      // case '':
+      //   return null;
+      case false:
+        return this.VisitorOperation();
+      case true:
+        return this.LoggedOperation(person_dropdown_visible, person_information);
+    }
+  }
+
   render() {
-    const { person_logged, person_dropdown_visible } = this.props;
+    const { person_logged, person_dropdown_visible, person_information } = this.props;
+    // console.log('person_information');
+    // console.log(person_information);
+    // console.log(person_logged.name);
     return (
       <Operation>
-        {person_logged ? this.LoggedOperation(person_dropdown_visible) :  this.VisitorOperation()}
+        { this.getOperationElement( person_logged, person_dropdown_visible, person_information) }
       </Operation>
     );
   }
 
+  componentDidMount() {
+
+    this.props.handleLogDetect();
+
+  }
 
 }
 
@@ -70,7 +87,8 @@ const mapStateToProps = (state)=>{
   return {
     /* for person component */
     'person_logged' : state.get('header').get('person_logged'),
-    'person_dropdown_visible' : state.get('header').get('person_dropdown_visible')
+    'person_dropdown_visible' : state.get('header').get('person_dropdown_visible'),
+    'person_information' : state.get('header').get('person_information'),
   }
 
 };
@@ -84,6 +102,10 @@ const mapDispatchToProps = (dispatch)=>{
     },
     handleVisibleChange(){
       const action = actionCreator.handlePersonVisibleChange();
+      dispatch(action)
+    },
+    handleLogDetect(){
+      const action = actionCreator.getLoggedPersonInformation();
       dispatch(action)
     }
   }

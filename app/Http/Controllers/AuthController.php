@@ -14,15 +14,20 @@ class AuthController extends Controller
     }
 
     public function index(Request $request){
+
+        $user_info = [];
+
         /* 已经登陆，则返回用户信息 */
-//        if(Auth::check()){
-//            dd(Auth::user()->toArray(0));
-//        }
-//        Auth::user();
+        if(Auth::check()){
+            $user_info = Auth::user()->toArray();
+        }
+        $logged = $user_info ? true : false;
 
-
-        dd( $request->session()->token() );
-
+        /* json return */
+        return json_encode([
+            'logged' => $logged,
+            'person_information' => $user_info,
+        ]);
     }
 
 }

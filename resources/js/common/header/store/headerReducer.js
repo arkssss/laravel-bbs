@@ -3,6 +3,7 @@ import {
   HEADER_MENU_ITEM_CLICK_ACTION,
   PERSON_DROPDOWN_HOVER_ACTION,
   PERSON_DROPDOWN_ITEM_CLICK_ACTION,
+  PERSON_HAS_LOGGED_IN,
 } from './actionType'
 import {fromJS} from "immutable";
 
@@ -48,6 +49,10 @@ const headerReducer = (state = defaultState, action) =>{
 
     if(action.type === PERSON_DROPDOWN_HOVER_ACTION){
       return  state.set('person_dropdown_visible', action.person_dropdown_visible)
+    }
+
+    if(action.type === PERSON_HAS_LOGGED_IN){
+      return  state.set('person_logged', true).set('person_information', action.person_information);
     }
 
     return state;

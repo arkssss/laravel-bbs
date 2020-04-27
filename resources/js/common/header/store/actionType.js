@@ -5,3 +5,4 @@ export const HEADER_MENU_ITEM_CLICK_ACTION = 'header/header_menu_item_click';
 /* for person component */
 export const PERSON_DROPDOWN_HOVER_ACTION = 'header/person/person_dropdown_hover';
 export const PERSON_DROPDOWN_ITEM_CLICK_ACTION = 'header/person/person_dropdown_item_click';
+export const PERSON_HAS_LOGGED_IN = 'head/person/person_has_logged_in';

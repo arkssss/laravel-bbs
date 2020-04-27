@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Service\PostCategoryService;
 use Illuminate\Http\Request;
 use App\Service\PostService;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class PostsController extends Controller

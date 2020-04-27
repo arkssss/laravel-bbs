@@ -3,6 +3,7 @@ import {
   HEADER_MENU_ITEM_CLICK_ACTION,
   PERSON_DROPDOWN_HOVER_ACTION,
   PERSON_DROPDOWN_ITEM_CLICK_ACTION,
+  PERSON_HAS_LOGGED_IN,
 }from './actionType'
 import axios from "axios";
 
@@ -30,10 +31,17 @@ export const getLoggedPersonInformation = () =>{
 
     axios.post('/auth').then((res)=>{
 
-      console.log(res)
+      if(res.data.logged){
+        /* 已登陆 */
+        const action = {
+          'type' : PERSON_HAS_LOGGED_IN,
+          'person_information' : res.data.person_information
+        };
+        dispatch(action);
+      }
 
-    }).catch(()=>{
-
+    }).catch((e)=>{
+      console.log('error');
     })
   }
 
