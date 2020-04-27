@@ -21,84 +21,69 @@ const tailLayout = {
     span: 16,
   },
 };
-const getForm = () => {
-
-  return (
-
-    <Form
-      {...layout}
-      name="basic"
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-    >
-      <Form.Item
-        label="Email"
-        name="email"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your email!',
-          },
-        ]}
-      >
-        <Input/>
-      </Form.Item>
-
-      <Form.Item
-        label="Password"
-        name="password"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your password!',
-          },
-        ]}
-      >
-        <Input.Password/>
-      </Form.Item>
-
-      <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-        <Checkbox>Remember me</Checkbox>
-      </Form.Item>
-
-      <Form.Item {...tailLayout}>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
-    </Form>
-
-  )
-
-};
 
 class Login extends Component {
 
   render() {
+    const handlerOnFinish = this.props.handlerOnFinish.bind(this);
+    const handlerOnFinishFailed = this.props.handlerOnFinishFailed.bind(this);
+
     return (
       <LoginWrapper>
         <FromWrapper>
-        { getForm() }
+          <Form
+            {...layout}
+            name="basic"
+            initialValues={{
+              remember: true,
+            }}
+            onFinish={(values) => handlerOnFinish(values)}
+            onFinishFailed={(errorInfo) => handlerOnFinishFailed(errorInfo)}
+          >
+            <Form.Item
+              label="Email"
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your email!',
+                },
+              ]}
+            >
+              <Input/>
+            </Form.Item>
+
+            <Form.Item
+              label="Password"
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your password!',
+                },
+              ]}
+            >
+              <Input.Password/>
+            </Form.Item>
+
+            <Form.Item {...tailLayout} name="remember" valuePropName="checked">
+              <Checkbox>Remember me</Checkbox>
+            </Form.Item>
+
+            <Form.Item {...tailLayout}>
+              <Button type="primary" htmlType="submit">
+                Submit
+              </Button>
+            </Form.Item>
+          </Form>
         </FromWrapper>
       </LoginWrapper>
     )
   }
 
-
-  componentDidMount() {
-
-    // console.log($('meta[name="csrf-token"]').attr('content'));
-
-  }
 }
 
-
 const mapStateToProps = (state)=>{
-  console.log('---- login ----');
-  console.log(state);
   return {
 
   };
@@ -106,27 +91,24 @@ const mapStateToProps = (state)=>{
 
 const mapDispatchToProps = (dispatch) =>{
   return {
+    handlerOnFinish(values){
+      axios.post('/login', {
+        '_token' : $('meta[name="csrf-token"]').attr('content'),
+        'email' : values.email,
+        'password' : values.password,
+        'remember' : values.remember,
+      }).then((res)=>{
+        /* 重定向到首页 */
+        this.props.history.push('/');
+      }).catch(()=>{
+        console.log('error');
+      });
+    },
 
+    handlerOnFinishFailed(errorInfo){
+      console.log('Failed:', errorInfo);
+    }
   }
 };
-
-const onFinish = (values) => {
-  console.log(values);
-  axios.post('/login', {
-    '_token' : $('meta[name="csrf-token"]').attr('content'),
-    'email' : values.email,
-    'password' : values.password,
-    'remember' : values.remember,
-  }).then((res)=>{
-    console.log(res);
-  }).catch(()=>{
-    console.log('error');
-  });
-};
-
-const onFinishFailed = (errorInfo) => {
-  console.log('Failed:', errorInfo);
-};
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

@@ -24,6 +24,10 @@ class PostsController extends Controller
     {
         $this->postService = $postService;
         $this->postCategoryService = $postCategoryService;
+
+        $this->middleware(
+           'auth',['only' => ['store']]
+        );
     }
 
     /* 返回所有的 posts */
@@ -36,7 +40,6 @@ class PostsController extends Controller
         ]);
 
     }
-
 
     /**
      * 按类别获得文章
@@ -118,7 +121,7 @@ class PostsController extends Controller
     public function store(PostStoreRequest $postStoreRequest, Post $post){
 
         $post->fill($postStoreRequest->all());
-        $post['u_id'] = 1;
+        $post['u_id'] = Auth::id();
 
         /* save success or not */
         $success = $this->postService->storePost($post);

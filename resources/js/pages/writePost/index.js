@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import ReactQuill from 'react-quill';
+import { Redirect } from 'react-router-dom';
 import 'react-quill/dist/quill.snow.css';
 import { Menu, Dropdown, Button } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
@@ -79,37 +80,43 @@ class WritePost extends Component{
     const {
       post_category, quill_value, handleQuillChange,
       title_value, selected_category_id, handlerPostTitleChange,
+      logged
     } = this.props;
     const handlerFormSubmit = this.props.handlerFormSubmit.bind(this);
-
-    return (
-      <WriteWrapper>
-        <Title>新建话题</Title>
-        <PostTitle onChange={(e) => handlerPostTitleChange(e)} placeholder='请填写标题' name='title' value={title_value} />
-        <PostCategory>
-          <Dropdown
-            className="dropdown"
-            overlay={this.getMenu(post_category)}
-          >
-            <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-              {this.getDisplayCategoryName(post_category, selected_category_id)} <DownOutlined />
-            </a>
-          </Dropdown>
-        </PostCategory>
-        <div className="text-editor">
-          <ReactQuill theme="snow"
-                      modules={modules}
-                      formats={formats}
-                      value={quill_value}
-                      onChange={(val)=>handleQuillChange(val)}
-          >
-          </ReactQuill>
-        </div>
-        <Button
-          onClick={() => handlerFormSubmit(title_value, selected_category_id, quill_value)}
-        >提交</Button>
-      </WriteWrapper>
-    );
+    if(logged) {
+      return (
+        <WriteWrapper>
+          <Title>新建话题</Title>
+          <PostTitle onChange={(e) => handlerPostTitleChange(e)} placeholder='请填写标题' name='title' value={title_value}/>
+          <PostCategory>
+            <Dropdown
+              className="dropdown"
+              overlay={this.getMenu(post_category)}
+            >
+              <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                {this.getDisplayCategoryName(post_category, selected_category_id)} <DownOutlined/>
+              </a>
+            </Dropdown>
+          </PostCategory>
+          <div className="text-editor">
+            <ReactQuill theme="snow"
+                        modules={modules}
+                        formats={formats}
+                        value={quill_value}
+                        onChange={(val) => handleQuillChange(val)}
+            >
+            </ReactQuill>
+          </div>
+          <Button
+            onClick={() => handlerFormSubmit(title_value, selected_category_id, quill_value)}
+          >提交</Button>
+        </WriteWrapper>
+      );
+    }else{
+      return (
+        <Redirect to='/login' />
+      )
+    }
   }
 
   componentDidMount() {
@@ -126,6 +133,7 @@ const mapStateToProps = (state)=>{
     'quill_value': state.get('writePost').get('quill_value'),
     'selected_category_id': state.get('writePost').get('selected_category_id'),
     'title_value': state.get('writePost').get('title_value'),
+    'logged' : state.get('header').get('person_logged'),
   }
 
 };

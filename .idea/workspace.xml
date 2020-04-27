@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079822e3-6500-4c83-b22f-868a2a6842fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/userHome/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/writePost/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/writePost/store/actionCreator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/writePost/store/actionType.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/writePost/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/writePost/store/writePostReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/writePost/style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/common/header/component/person.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/common/header/component/person.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/common/header/store/actionCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/common/header/store/actionCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/common/header/store/actionType.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/common/header/store/actionType.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/common/header/store/headerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/common/header/store/headerReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/pages/home/components/recommend.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/home/components/recommend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/writePost/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/writePost/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +221,7 @@
       <workItem from="1587697345129" duration="1390000" />
       <workItem from="1587699965648" duration="69384000" />
       <workItem from="1587895441305" duration="10548000" />
-      <workItem from="1587915466968" duration="23353000" />
+      <workItem from="1587915466968" duration="24974000" />
     </task>
     <servers />
   </component>
