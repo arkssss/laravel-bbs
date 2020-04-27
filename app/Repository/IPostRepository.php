@@ -51,4 +51,12 @@ interface IPostRepository{
      * @return mixed
      */
     public function storePost(Post $post);
+
+
+    /**
+     * @param $id
+     * @return mixed
+     * @throws QueryException
+     */
+    public function getPostsDetailById($id);
 }

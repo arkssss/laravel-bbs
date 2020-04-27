@@ -131,4 +131,20 @@ class PostsController extends Controller
         ]);
 
     }
+
+    /**
+     * @param Request $request
+     * @return false|string
+     */
+    public function show(Request $request){
+
+        $id = $request->post;
+
+        $post = $this->postService->getPostDetail($id);
+
+        return json_encode([
+            'status' => config('constant.STATUS_SUCCESS'),
+            'data' => $post
+        ]);
+    }
 }

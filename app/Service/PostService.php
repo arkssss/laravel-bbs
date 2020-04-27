@@ -143,6 +143,7 @@ class PostService {
     }
 
 
+
     public function storePost(Post $post){
 
         try {
@@ -153,6 +154,21 @@ class PostService {
         }
 
         return $success;
+    }
+
+
+
+    public function getPostDetail($id){
+
+        $post = [];
+
+        try {
+            $post = $this->postRepository->getPostsDetailById($id);
+        }catch (QueryException $e){
+            Log::error($e->getMessage());
+        }
+
+        return $post;
     }
 }
 

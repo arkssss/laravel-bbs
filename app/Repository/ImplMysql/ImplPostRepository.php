@@ -94,4 +94,18 @@ class ImplPostRepository implements IPostRepository{
         return $post->save();
 
     }
+
+    /**
+     * @param $id
+     * @return mixed|void
+     * @throws QueryException
+     */
+    public function getPostsDetailById($id)
+    {
+        return $this->postModel
+            ->with('category', 'user')
+            ->where('id', $id)
+            ->first()
+            ->toArray();
+    }
 }
