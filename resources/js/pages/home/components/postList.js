@@ -4,7 +4,7 @@ import 'antd/dist/antd.css';
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 import {actionCreator} from "../store";
 import {connect} from "react-redux";
-
+import {Link} from "react-router-dom";
 import {
   ListCategory,
   CategoryItem,
@@ -12,6 +12,7 @@ import {
   ListOrder,
   ListOrderItem,
 } from "../style"
+import {get} from "immutable";
 
 
 class PostList extends Component{
@@ -75,7 +76,9 @@ class PostList extends Component{
           pageSize: 6,
         }}
         dataSource={this.props.list}
-        renderItem={item => (
+        renderItem={item => {
+          const title_href = '/postDetail/' + item.get('id');
+          return(
           <List.Item
             key={item.get('title')}
             actions={[
@@ -87,11 +90,11 @@ class PostList extends Component{
           >
             <List.Item.Meta
               avatar={<Avatar src={item.get('avatar')} />}
-              title={<a href={item.get('href')}>{item.get('title')}</a>}
+              title={<Link to={title_href}>{item.get('title')}</Link>}
               description={item.get('description')}
             />
           </List.Item>
-        )}
+        )}}
       />
       </ListContent>
       </Fragment>

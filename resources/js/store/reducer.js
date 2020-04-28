@@ -3,6 +3,7 @@ import {combineReducers} from 'redux-immutable'
 import {homepostReducer} from '../pages/home/store'
 import {headerReducer} from '../common/header/store'
 import {writePostReducer} from '../pages/writePost/store'
+import {postDetailReducer} from "../pages/postDetail/store";
 
 /* 合并各个 reducer */
 export default combineReducers({
@@ -11,5 +12,6 @@ export default combineReducers({
   homepost : homepostReducer,
   header : headerReducer,
   writePost : writePostReducer,
+  postDetail: postDetailReducer,
 
 })

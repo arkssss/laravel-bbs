@@ -31,7 +31,7 @@ class PostService {
         /* value passed for the ajax */
         $passKey = [
             'created_at', 'reply_count', 'title',
-            'view_count', 'updated_at'
+            'view_count', 'updated_at', 'id'
         ];
         $categoryKey = [
             'name' => 'cat_name',

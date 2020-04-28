@@ -9,6 +9,7 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 import UserHome from "./pages/userHome";
 import WritePost from "./pages/writePost";
+import PostDetail from "./pages/postDetail";
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -32,7 +33,8 @@ if (document.getElementById('app')) {
           <Route path = '/login' exact component = {Login}></Route>
           <Route path = '/register' exact component = {Register}></Route>
           <Route path = '/userHome' exact component = {UserHome}></Route>
-          <Route path= '/write' exact component={WritePost}></Route>
+          <Route path = '/write' exact component={WritePost}></Route>
+          <Route path = '/postDetail/:id' exact component={PostDetail}></Route>
         </div>
       </BrowserRouter>
     </Provider>
