@@ -1,5 +1,6 @@
 import {
-  GET_POST_DETAIL_ACTION
+  GET_POST_DETAIL_ACTION,
+  CLEAR_POST_DETAIL_ACTION,
 }from './actionType'
 import axios from 'axios'
 import {fromJS} from "immutable";
@@ -24,6 +25,19 @@ export const getPostDetail = (id) =>{
         console.log('error in getPostDetail');
     })
 
+  }
+
+};
+
+export const clearPostDetail = () => {
+  return {
+    'type' : CLEAR_POST_DETAIL_ACTION,
+    'value' : fromJS({
+      'body' : '',
+      'user' : {
+        'name' : '',
+      }
+    })
   }
 
 };

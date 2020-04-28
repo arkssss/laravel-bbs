@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="079822e3-6500-4c83-b22f-868a2a6842fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Service/PostService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/PostService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/pages/home/components/postList.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/home/components/postList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/postDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/postDetail/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/postDetail/store/actionCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/postDetail/store/actionCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/postDetail/store/actionType.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/postDetail/store/actionType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/postDetail/store/postDetailReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/postDetail/store/postDetailReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
