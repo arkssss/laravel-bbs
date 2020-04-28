@@ -77,7 +77,10 @@ class PostList extends Component{
         }}
         dataSource={this.props.list}
         renderItem={item => {
-          const title_href = '/postDetail/' + item.get('id');
+          let title_href = '/postDetail/' + item.get('id');
+          if(item.get('slug')){
+            title_href = title_href + '/' + item.get('slug');
+          }
           return(
           <List.Item
             key={item.get('title')}

@@ -23,6 +23,7 @@ const defaultState = fromJS({
         "user_avatar": null,
         "user_name": "Ms. Kiera Toy I",
         "view_count": 0,
+        'slug' : ''
       },
   ],
 

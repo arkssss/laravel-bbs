@@ -37,9 +37,11 @@ class PostObserver
      */
     public function saving(post $post){
 
-        $post->slug = app(SlugTranslateHandler::class)->translate($post->title);
+        if (!$post->slug) {
+            $post->slug = app(SlugTranslateHandler::class)->translate($post->title);
+        }
+
         $post->excerpt = make_excerpt($post->body);
-        
     }
 
     /**

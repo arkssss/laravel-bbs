@@ -34,7 +34,7 @@ if (document.getElementById('app')) {
           <Route path = '/register' exact component = {Register}></Route>
           <Route path = '/userHome' exact component = {UserHome}></Route>
           <Route path = '/write' exact component={WritePost}></Route>
-          <Route path = '/postDetail/:id' exact component={PostDetail}></Route>
+          <Route path = '/postDetail/:id/:slug?' exact component={PostDetail}></Route>
         </div>
       </BrowserRouter>
     </Provider>
