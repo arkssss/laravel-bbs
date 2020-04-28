@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Handlers\SlugTranslateHandler;
 use App\Http\Requests\PostStoreRequest;
 use App\Models\Post;
 use App\Service\PostCategoryService;

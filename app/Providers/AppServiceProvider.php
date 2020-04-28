@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Post;
 use App\Observers\PostObserver;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,6 +22,16 @@ class AppServiceProvider extends ServiceProvider
             $this->app->register(\Summerblue\Generator\GeneratorsServiceProvider::class);
 
         }
+
+        /* baidu translate service */
+        $this->app->when('App\Handlers\SlugTranslateHandler')
+            ->needs('$appId')
+            ->give(Config::get('services.BaiDu_translate.appId')?:'');
+
+        $this->app->when('App\Handlers\SlugTranslateHandler')
+            ->needs('$appKey')
+            ->give(Config::get('services.BaiDu_translate.appKey')?:'');
+
     }
 
     /**

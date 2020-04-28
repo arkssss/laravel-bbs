@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Handlers\SlugTranslateHandler;
 use App\Models\post;
 use Illuminate\Support\Facades\Log;
 
@@ -32,10 +33,13 @@ class PostObserver
     /**
      * generate excerpt before save
      * @param post $post
+     * @param SlugTranslateHandler $slugTranslateHandler
      */
     public function saving(post $post){
 
+        $post->slug = app(SlugTranslateHandler::class)->translate($post->title);
         $post->excerpt = make_excerpt($post->body);
+        
     }
 
     /**
