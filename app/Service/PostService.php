@@ -145,7 +145,6 @@ class PostService {
 
 
     public function storePost(Post $post){
-
         try {
             $success = $this->postRepository->storePost($post);
         }catch (QueryException $e){

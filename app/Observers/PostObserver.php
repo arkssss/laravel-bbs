@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Handlers\SlugTranslateHandler;
+use App\Jobs\TranslateSlug;
 use App\Models\post;
 use Illuminate\Support\Facades\Log;
 
@@ -33,13 +34,8 @@ class PostObserver
     /**
      * generate excerpt before save
      * @param post $post
-     * @param SlugTranslateHandler $slugTranslateHandler
      */
     public function saving(post $post){
-
-        if (!$post->slug) {
-            $post->slug = app(SlugTranslateHandler::class)->translate($post->title);
-        }
 
         $post->excerpt = make_excerpt($post->body);
     }
@@ -50,6 +46,10 @@ class PostObserver
      */
     public function saved(post $post){
 
+        /* 推送到任务队列 */
+        if (!$post->slug) {
+            dispatch(new TranslateSlug($post));
+        }
     }
 
     /**
