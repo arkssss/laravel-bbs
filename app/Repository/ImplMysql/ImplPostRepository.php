@@ -6,11 +6,14 @@ namespace App\Repository\ImplMysql;
 use App\Models\Post;
 use App\Repository\IPostRepository;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\DB;
 
 
 class ImplPostRepository implements IPostRepository{
 
     private $postModel;
+
+    private $table = 'posts';
 
     /* DI */
     public function __construct(Post $postModel)
@@ -107,5 +110,12 @@ class ImplPostRepository implements IPostRepository{
             ->where('id', $id)
             ->first()
             ->toArray();
+    }
+
+    public function getPostTimesWithUserId($limit = 8, $dayGap = 7)
+    {
+       return DB::select("SELECT  u_id, COUNT(*) as num from posts
+            WHERE TIMESTAMPDIFF(DAY, created_at, NOW()) < ?
+            GROUP BY u_id  order by count(*) DESC limit ?", [$dayGap, $limit]);
     }
 }

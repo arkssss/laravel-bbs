@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Schedule\ActiveUser;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\URL;
 

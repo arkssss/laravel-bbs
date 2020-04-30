@@ -24,8 +24,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+
+        /* 定义计划任务 */
+//        $schedule->command('larabbs:cal-active-user')->hourly();
+
     }
 
     /**

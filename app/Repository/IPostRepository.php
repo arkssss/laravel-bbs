@@ -59,4 +59,13 @@ interface IPostRepository{
      * @throws QueryException
      */
     public function getPostsDetailById($id);
+
+
+    /**
+     * 在指定时间内获取每个人的发文次数
+     * @param int $limit
+     * @param int $dayGap
+     * @return mixed
+     */
+    public function getPostTimesWithUserId($limit=8, $dayGap = 7);
 }
